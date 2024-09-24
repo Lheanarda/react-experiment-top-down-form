@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    /* remove default border */
+    body{
+        @apply font-monts !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-secondary 
+    }
+    select {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+}
+
+@layer components{
+    .background {
+        @apply bg-gradient-to-bl from-cyan-200 to-green-300 lg:h-screen w-screen flex items-center justify-center text-slate-900  dark:bg-gradient-to-br 
+    }
+
+    .scrollbar-custom{
+        @apply !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-secondary
+    }
+
+    .p-modal{
+        @apply p-4 pt-16
+    }
+
+    .p-container{
+        @apply px-3  md:px-[10%]
+    }
+
+    .bg-splash-day {
+        background-image:
+            /* top, transparent red */
+            linear-gradient(rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0.8)),
+            /* your image */
+            url(../assets/images/splash_page_siang.png);
+        background-size: cover;
+    }
+
+    .icon-click{
+        @apply w-6 h-6 cursor-pointer text-white 
+    }
+}
+
+
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
